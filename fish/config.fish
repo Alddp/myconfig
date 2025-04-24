@@ -171,6 +171,8 @@ alias jctl 'journalctl -p 3 -xb'
 alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 
 
+# ==========================================================================
+
 function Tproxy -d "Toggle proxy"
   if set -q http_proxy
     set -e http_proxy
@@ -198,6 +200,7 @@ alias trane 'trans -shell en:zh'
 alias tranz-b 'trans -e bing -shell zh:en'
 alias trane-b 'trans -e bing -shell en:zh'
 
+set EDITOR nvim
 
 # ==================================================
 
