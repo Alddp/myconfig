@@ -41,9 +41,9 @@ if test -d ~/Applications/depot_tools
 end
 
 ## Starship prompt
-if status --is-interactive
-   source ("/usr/bin/starship" init fish --print-full-init | psub)
-end
+# if status --is-interactive
+#    source ("/usr/bin/starship" init fish --print-full-init | psub)
+# end
 
 ## Advanced command-not-found hook
 source /usr/share/doc/find-the-command/ftc.fish
@@ -201,6 +201,23 @@ alias tranz-b 'trans -e bing -shell zh:en'
 alias trane-b 'trans -e bing -shell en:zh'
 
 set EDITOR nvim
+
+set -g theme_nerd_fonts yes
+set -g theme_color_scheme catpuccin-mocha
+
+set -g theme_display_user ssh
+set -g default_user bobthecow
+
+
+# 强制所有模式光标为 block
+set -g fish_cursor_default block
+set -g fish_cursor_insert block
+set -g fish_cursor_visual block
+set -g fish_cursor_replace block
+# 禁止光标随模式变化
+function fish_vi_cursor --on-variable fish_bind_mode
+  # Do nothing here to prevent cursor change
+end
 
 # ==================================================
 
