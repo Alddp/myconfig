@@ -1,3 +1,4 @@
+test ! -e "$HOME/.x-cmd.root/local/data/fish/rc.fish" || source "$HOME/.x-cmd.root/local/data/fish/rc.fish" # boot up x-cmd.
 ## Set values
 # Hide welcome message & ensure we are reporting fish as shell
 set fish_greeting
@@ -200,6 +201,9 @@ alias trane 'trans -shell en:zh'
 alias tranz-b 'trans -e bing -shell zh:en'
 alias trane-b 'trans -e bing -shell en:zh'
 
+alias ff 'fastfetch'
+
+
 set EDITOR nvim
 
 set -g theme_nerd_fonts yes
@@ -209,20 +213,9 @@ set -g theme_display_user ssh
 set -g default_user bobthecow
 
 
-# 强制所有模式光标为 block
-set -g fish_cursor_default block
-set -g fish_cursor_insert block
-set -g fish_cursor_visual block
-set -g fish_cursor_replace block
-# 禁止光标随模式变化
-function fish_vi_cursor --on-variable fish_bind_mode
-  # Do nothing here to prevent cursor change
-end
-
 # ==================================================
 
 ## Run fastfetch if session is interactive
-if status --is-interactive && type -q fastfetch
-   fastfetch --config neofetch.jsonc
-end
-
+# if status --is-interactive && type -q fastfetch
+#    fastfetch --config neofetch.jsonc
+# end
